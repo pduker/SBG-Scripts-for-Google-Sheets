@@ -34,7 +34,6 @@ WARNING - haven't tried this option yet, and not sure why we didn't do it in the
 9) You should start seeing student files show up in the main folder of your Google drive.  You'll likely want to organize them all into a separate folder for the class.
 
 10) Here comes the tedious part. Unfortunately triggers don't copy when a file is duplicated, and the command to set a trigger for the file doesn't seem to work (at least I haven't been able to figure out how to do this), so you have to do the following for each of your student files:
-
  <br>a) open the file </br>
  <br>b) Tools > Script Editor </br>
  <br>c) Click on the "triggers" icon (looks like a clock)</br>
