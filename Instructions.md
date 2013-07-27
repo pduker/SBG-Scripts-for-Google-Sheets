@@ -5,7 +5,7 @@ Please follow these instructions to create a SBG Gradebook in Google Docs:
 2) Go to Tools > Script editor, and then paste in the code from the "Generate-Student-Gradebooks" file on this Repository.  Then switch tabs back to the Master spreadsheet.
 
 3) Copy the Master Spreadsheet Id (this is a pretty long string ... 
-such as: 0Agwc91nl2SoVdGJVTFlCQkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between 
+such as: 0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between 
 the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
 
 4) Create a new spreadsheet (call it Student Gradebook Template) and paste in the master spreadsheet ID into A1.  Then hide the whole first row (select row, left click, Hide row).
@@ -17,7 +17,7 @@ Since the Master Spreadsheet Id stays consistent, you could actually paste it in
 Instead of line 12 being: 
 var masterid = displayPage.getRange(1,1).getValue(); 
 you would have: 
-var masterid = "0Agwc91nl2SoVdDVHcFFMSndpVVRRMXpBWFNuV1NsRnc"; 
+var masterid = "0Agwc91nl2SoVdDVHcGFMSndpVVRRMXpBWFNuV1NsRnc"; 
 with your master spreadsheet Id between the quotes above.
 WARNING - haven't tried this option yet, and not sure why we didn't do it in the first place, but I think it should work.
 
@@ -25,7 +25,7 @@ WARNING - haven't tried this option yet, and not sure why we didn't do it in the
 6) Now that your Student template file is ready, you have to point the Master script to it. Close the script editor and go back to the Student Gradebook Template spreadsheet.  Once there, copy the Student Gradebook Template Id (a similarly long string) as you did in step 3.
 
 7) Go back to the "Master Spreadsheet," go to Tools > Script editor (or just find the tab if you didn't close it).  And on line 22, paste the Student Gradebook Template ID so that it reads something like:
-  var templateid = "0Agwc91nl2SoVdDVHcFFMSndpVVRRMXpBWFNuV1NsRnc";
+  var templateid = "0Agwc91nl2SoVdDWHcFFMSndpVVRRMXpBWFNuV1NsRnc";
 
 8) Great - your Master script is set and your template is set with a script in it ready to run.  So go ahead and run your Generate-Student-Gradebooks script (Tools > Script manager... then click on the Run tab).
 
