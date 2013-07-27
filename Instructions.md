@@ -37,9 +37,9 @@ WARNING - haven't tried this option yet, and not sure why we didn't do it in the
 
  <br>a) open the file </br>
  <br>b) Tools > Script Editor </br>
- c) Click on the "triggers" icon (looks like a clock)
- d) Click on the blue text that says: "No triggers set up. Click here to add one now"
- e) The default option is on opening the file, which is what you want, so just click Save.
+ <br>c) Click on the "triggers" icon (looks like a clock)</br>
+ <br>d) Click on the blue text that says: "No triggers set up. Click here to add one now"</br>
+ <br>e) The default option is on opening the file, which is what you want, so just click Save.</br>
  
 As you get going, this doesn't take as much time as you think (depending on your class size), but I'd love it if someone found a way to automate this part.
 
