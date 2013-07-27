@@ -1,0 +1,71 @@
+//   Pull Data Script
+// This is the script to pull data from the Master spreadsheet (copy into the template so that it runs on 
+// each student's gradebook).  
+
+function PullData() {
+  
+// getting student name and setting up the sheet for writing
+  var stuid = SpreadsheetApp.getActiveSpreadsheet().getName().split("for ")[1];
+  var displayPage = SpreadsheetApp.getActiveSheet();
+
+// finding and pulling the categories (titles) from the master spreadsheet
+  var masterid = displayPage.getRange(1,1).getValue();
+  var workbook = SpreadsheetApp.openById(masterid);
+  var mastersheet = workbook.getSheetByName("Average");
+
+// getting the total number of categories - this needs to be a formula on the last row of the master
+// spreadsheet that counts the categories (or you could simply put the number here if it has already
+// been determined).
+  var numcategories = mastersheet.getRange(mastersheet.getLastRow(),1).getValue();
+  
+//Finding which row of the master spreadsheet corresponds to the correct stuid 
+  for(var mr=2;mr<=mastersheet.getLastRow();mr++){
+    if(mastersheet.getRange(mr,1).getValue()==stuid){
+      var studentrow = mr;
+      break;
+    }else{
+//Logger.log(mastersheet.getRange(mr,1).getValue() + "," + stuid);    // (for debugging)
+    }
+  }
+
+// getting all of the data from the Master to pull from.  This takes a bit of processing power - perhaps
+// there's a simpler solution?
+
+  var assignments = workbook.getSheets();
+  
+// clearing away any previous data so that it is a clean re-write in case you've deleted or changed
+// any of your categories.  Note if you see yourself deleting more than 5 categories you'll want to 
+// update the number below to be more than 5 (e.g. if you might delete 7 categories you'll want the 
+// next line to read:
+//  displayPage.getRange(2,2,numcategories,assignments.length + 7).clear({contentsOnly:true});
+// The only con with this is that it creates extra blank columns on the student gradebook, which
+// isn't too big of a deal
+
+  displayPage.getRange(2,2,numcategories,assignments.length + 5).clear({contentsOnly:true});
+
+// re-pull the categories from the master (this and the last function allows for a set of categories that
+// can grow and shrink over time).  This pastes the categories so that it matches those on the
+// "Average" sheet in the master spreadsheet 
+
+  var categories = mastersheet.getRange(1,3,1,numcategories).getValues();  
+  displayPage.getRange(2,2,1,numcategories).setValues(categories);
+  
+// this is where it goes through each page of the master spreadsheet and starts to pull data for the 
+// student gradebook. It first pulls the assignment name and pastes into column 1 of the student
+// gradebook.  Then it pulls the student scores and pastes them into the student gradebook as well.  
+
+  for(var r=0;r<assignments.length;r++){
+    var assignmentname = assignments[r].getName();  
+    displayPage.getRange(r+3,1).setValue(assignmentname);
+    var assignmentsheet = assignments[r]; 
+    var assignmentdata = assignmentsheet.getRange(studentrow,3,1,numcategories).getValues();
+    for(var dp=0;dp<assignmentdata[0].length;dp++){
+      var targetcol = dp+2;
+      var targetrow = r+3;
+      displayPage.getRange(targetrow,targetcol).setValue(assignmentdata[0][dp])
+    }
+  }
+
+// Voila - thanks so much to Becky Kinney for help with all of the coding.
+
+}
