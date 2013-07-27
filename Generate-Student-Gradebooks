@@ -1,0 +1,35 @@
+// Create Student gradebook script
+// This script will take information from your master spreadsheet and crank out a new spreadsheet 
+// for each student.  The master spreadsheet should have a page titled "Average."  The script is set
+// up to pull from this page to get the student name from Column 1, and e-mail address from Column
+//  2.  The student template should have the master spreadsheet Id in A1 (this is a pretty long 
+// string such as: 0Agwc91nl2SoVdGJVTFlCQkhHdkxIWkVnZUkyT08xTkE).  Then you'll likely want 
+// to hide the whole first row.  
+
+function createStudentSheets() {
+
+// Setting up the gradebook title and accessing the master spreadsheet
+  var titleStem = "296 Gradebook for ";
+  var master = SpreadsheetApp.getActiveSheet();
+
+// Get the names and e-mail addresses of the students.  The -2 accounts for the header title and your
+// category counter on the master spreadsheet.
+  var roster = master.getRange(2,1,master.getLastRow()-2,1).getValues();
+  var emailroster = master.getRange(2,2,master.getLastRow()-2,1).getValues();
+
+// Set the template Id here - this should be the google address for the spreadsheet that you would
+// like to make copies of.
+  var templateid = "0Agwc91nl2SoVdDVHcFFMSndpVVRRMXpBWFNuV1NsRnc";
+  var template = SpreadsheetApp.openById(templateid);
+
+// Then start to make clones of the spreadsheet with the student names in the title, and also share
+// with the students.
+  for(var s = 0; s<roster.length;s++){
+    var stuid = roster[s][0];
+    var emailid = emailroster[s][0];
+    // Logger.log(s + " " + stuname + roster.length + roster[0].length);
+   var newsheet = template.copy(titleStem + stuid);
+    newsheet.getRange("B1").setValue(emailid);
+    newsheet.addViewer(emailid);
+  }
+}
