@@ -1,4 +1,4 @@
-The basic set up to use these scripts to create a SBG Gradebook is to do the following:
+Please follow these instructions to create a SBG Gradebook in Google Docs:
 
 1) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class, column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).
 
