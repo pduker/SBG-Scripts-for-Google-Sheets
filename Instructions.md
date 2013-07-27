@@ -35,7 +35,7 @@ WARNING - haven't tried this option yet, and not sure why we didn't do it in the
 
 10) Here comes the tedious part. Unfortunately triggers don't copy when a file is duplicated, and the command to set a trigger for the file doesn't seem to work (at least I haven't been able to figure out how to do this), so you have to do the following for each of your student files:
 
- a) open the file
+ <br>a) open the file </br>
  b) Tools > Script Editor
  c) Click on the "triggers" icon (looks like a clock)
  d) Click on the blue text that says: "No triggers set up. Click here to add one now"
