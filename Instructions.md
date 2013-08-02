@@ -59,7 +59,7 @@ In the Master gradebook set up, each column is for a separate category/standard 
 
 4) Go to the Master spreadsheet and set up an function that looks at the same cell on each tab and averages them together.  Something like: 
 =Average(Quiz02!D2,Quiz03!D2,Quiz04!D2,Quiz05!D2,Quiz06!D2,Quiz07!D2,Quiz08!D2)
-Note that you actually don't need to pull the cells from each tab; you only need to average the tabs that have a grade in that category....  That said, you can just use the auto fill function in google spreadsheet to quickly average all of the tabs.
+Note that you actually don't need to pull the cells from each tab; you only need to average the tabs that have a grade in that category.... Once you've done this for the first cell, you can just use the auto fill function in google spreadsheet to quickly average all of the tabs.
 
 5) Do a quick spot check that your function references are good and that the averages are being computed accurately.  
 
