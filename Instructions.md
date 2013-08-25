@@ -43,8 +43,8 @@ _WARNING_ - haven't tried this option yet, and not sure why we didn't do it in t
  
 As you get going, this doesn't take as much time as you think (depending on your class size), but I'd love it if someone found a way to automate this part.
 
-11) Lastly, after you've created all of the student sheets.  Go to the last row of your Master Spreadsheet and below the row with last student's name, paste the following code into column A:
-=(Counta(1:1)) - 2
+11) Lastly, after you've created all of the student sheets.  Go to the last row of your Master Spreadsheet and below the row with last student's name, paste the following code into column A: <p>
+=(Counta(1:1)) - 2 </p>
 This will count how many categories that you have (subtracting 2 for the student name and e-mail address columns). 
 
 After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
