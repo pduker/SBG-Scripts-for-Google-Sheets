@@ -69,6 +69,10 @@ Note that you actually don't need to pull the cells from each tab; you only need
 
 The "Average" tab should list each student's average grade for each category, and the assignment tabs show you each students' scores for that assignment.  You can open up each student's individual grade sheet if you want to look at how they are doing more wholistically. When the student or you opens the student gradebook file, the script should run and pull the data from the master gradebook. After a few seconds, the file "magically" updates with the current info from the Master.
 
+To see an example of the Master spreadsheet (with all of the averages and grade computing) please see: <p>
+[SBG Master Spreadsheet Example](http://www.udel.edu/001859)
+</p>
+
 
 
   
