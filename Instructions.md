@@ -10,9 +10,9 @@ Please follow these instructions to set up a SBG Gradebook in Google Docs:
 such as: 0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between 
 the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
 
-4) Create a new spreadsheet (call it Student Gradebook Template) and paste in the master spreadsheet ID into A1.  Then hide the whole first row (select row, left click, Hide row).
+4) Create a new spreadsheet (call it "Student Gradebook Template" or something like that) and paste in the master spreadsheet ID into A1.  Then hide the whole first row (select row, left click, Hide row).  In order to help with legibility, you might also consider shading every 2nd or 3rd row and column, so students will be able to follow which assignments and categories go together more easily.
 
-5) In the Student Gradebook Template spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  
+5) In the "Student Gradebook Template" spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  
 
 _Optional_: 
 Since the Master Spreadsheet Id stays consistent, you could actually paste it into the Student Template script in line 12 of the code.  In that case don't fill in A1 and instead alter the Student-Template-Script as follows: 
@@ -26,8 +26,8 @@ _WARNING_ - haven't tried this option yet, and not sure why we didn't do it in t
 
 6) Now that your Student template file is ready, you have to point the Master script to it. Close the script editor and go back to the Student Gradebook Template spreadsheet.  Once there, copy the Student Gradebook Template Id (a similarly long string) as you did in step 3.
 
-7) Go back to the "Master Spreadsheet," go to Tools > Script editor (or just find the tab if you didn't close it).  And on line 22, paste the Student Gradebook Template ID so that it reads something like:
-  var templateid = "0Agwc91nl2SoVdDWHcFFMSndpVVRRMXpBWFNuV1NsRnc";
+7) Go back to the "Master Spreadsheet," go to Tools > Script editor (or just find the tab if you didn't close it).  And on line 22, paste the Student Gradebook Template ID so that it reads something like (except with your Template ID):<p>
+  var templateid = "0Agwc91nl2SoVdDWHcFFMSndpVVRRMXpBWFNuV1NsRnc"; </p>
 
 8) Great - your Master script is set and your template is set with a script in it ready to run.  So go ahead and run your Generate-Student-Gradebooks script (Tools > Script manager... then click on the Run tab).
 
@@ -61,8 +61,8 @@ In the Master gradebook set up, each column is for a separate category/standard 
 
 3) Enter in the grades in the new assignment tab (I like to hide the columns that are not relevant to this assignment, so it's easier to see what the actual scores are, but this isn't necessary).  
 
-4) Go to the Master spreadsheet and set up an function that looks at the same cell on each tab and averages them together.  Something like: 
-=Average(Quiz02!D2,Quiz03!D2,Quiz04!D2,Quiz05!D2,Quiz06!D2,Quiz07!D2,Quiz08!D2)
+4) Go to the Master spreadsheet and set up an function that looks at the same cell on each tab and averages them together.  Something like: <p>
+=Average(Quiz02!D2,Quiz03!D2,Quiz04!D2,Quiz05!D2,Quiz06!D2,Quiz07!D2,Quiz08!D2) </p>
 Note that you actually don't need to pull the cells from each tab; you only need to average the tabs that have a grade in that category.... Once you've done this for the first cell, you can just use the auto fill function in google spreadsheet to quickly average all of the tabs.
 
 5) Do a quick spot check that your function references are good and that the averages are being computed accurately.  
