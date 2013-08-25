@@ -2,7 +2,7 @@
 
 Please follow these instructions to set up a SBG Gradebook in Google Docs:
 
-1) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Averages."
+1) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."
 
 2) Go to Tools > Script editor, and then paste in the code from the "Generate-Student-Gradebooks" file on this Repository.  Then switch tabs back to the Master spreadsheet.
 
@@ -47,13 +47,13 @@ After this you should be all set in terms of the student files updating automati
 
 
 <h3> Entering in new grades </h3>
-In the Master gradebook set up, each column is for a separate category/standard and each row is for a student. You'll want to think a little bit about how to organize your columns, so that similar categories are adjacent, etc. Also consider color coding the "Master" by highlighting every 2nd or 3rd row and column to make it easier to read.  Once you've got it looking nice, duplicate your "Averages" tab and re-title it "End of Records."  You only need to do this once. Once you have all that sorted out, here's how you enter grades in:
+In the Master gradebook set up, each column is for a separate category/standard and each row is for a student. You'll want to think a little bit about how to organize your columns, so that similar categories are adjacent, etc. Also consider color coding the "Master" by highlighting every 2nd or 3rd row and column to make it easier to read.  Once you've got it looking nice, duplicate your "Average" tab and re-title it "End of Records."  You only need to do this once. Once you have all that sorted out, here's how you enter grades in:
 
-1) first check to see if the standards/categories are already a column header in the "Averages" tab, if not create a new column for that standard.
+1) first check to see if the standards/categories are already a column header in the "Average" tab, if not create a new column for that standard.
 
 2) Duplicate the "End of Records" tab, and then retitle it to the new assignment name that you are entering grades for (e.g. project 1, HW 3, Exam 2, etc.).
 
-2) Paste the top row of the "Averages" tab onto the newly created new assignment tab (to make sure that all of your categories are up to date).
+2) Paste the top row of the "Average" tab onto the newly created new assignment tab (to make sure that all of your categories are up to date).
 
 3) Enter in the grades in the new assignment tab (I like to hide the columns that are not relevant to this assignment, so it's easier to see what the actual scores are, but this isn't necessary).  
 
@@ -63,7 +63,7 @@ Note that you actually don't need to pull the cells from each tab; you only need
 
 5) Do a quick spot check that your function references are good and that the averages are being computed accurately.  
 
-The "Averages" tab should list each student's average grade for each category, and the assignment tabs show you each students' scores for that assignment.  You can open up each student's individual grade sheet if you want to look at how they are doing more wholistically. When the student or you opens the student gradebook file, the script should run and pull the data from the master gradebook. After a few seconds, the file "magically" updates with the current info from the Master.
+The "Average" tab should list each student's average grade for each category, and the assignment tabs show you each students' scores for that assignment.  You can open up each student's individual grade sheet if you want to look at how they are doing more wholistically. When the student or you opens the student gradebook file, the script should run and pull the data from the master gradebook. After a few seconds, the file "magically" updates with the current info from the Master.
 
 
 
