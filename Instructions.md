@@ -2,7 +2,7 @@
 
 Please follow these instructions to set up a SBG Gradebook in Google Docs:
 
-1) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."
+1a) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.
 
 2) Go to Tools > Script editor, and then paste in the code from the "Generate-Student-Gradebooks" file on this Repository.  Then switch tabs back to the Master spreadsheet.
 
@@ -14,14 +14,14 @@ the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
 
 5) In the Student Gradebook Template spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  
 
-Optional 
+_Optional_: 
 Since the Master Spreadsheet Id stays consistent, you could actually paste it into the Student Template script in line 12 of the code.  In that case don't fill in A1 and instead alter the Student-Template-Script as follows: 
 Instead of line 12 being: 
 var masterid = displayPage.getRange(1,1).getValue(); 
 you would have: 
 var masterid = "0Agwc91nl2SoVdDVHcGFMSndpVVRRMXpBWFNuV1NsRnc"; 
 with your master spreadsheet Id between the quotes above.
-WARNING - haven't tried this option yet, and not sure why we didn't do it in the first place, but I think it should work.
+_WARNING_ - haven't tried this option yet, and not sure why we didn't do it in the first place, but I think it should work.
 
 
 6) Now that your Student template file is ready, you have to point the Master script to it. Close the script editor and go back to the Student Gradebook Template spreadsheet.  Once there, copy the Student Gradebook Template Id (a similarly long string) as you did in step 3.
@@ -42,6 +42,10 @@ WARNING - haven't tried this option yet, and not sure why we didn't do it in the
  <br>e) The default option is on opening the file, which is what you want, so just click Save.</br>
  
 As you get going, this doesn't take as much time as you think (depending on your class size), but I'd love it if someone found a way to automate this part.
+
+11) Lastly, after you've created all of the student sheets.  Go to the last row of your Master Spreadsheet and below the row with last student's name, paste the following code into column A:
+=(Counta(1:1)) - 2
+This will count how many categories that you have (subtracting 2 for the student name and e-mail address columns). 
 
 After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
 
