@@ -8,5 +8,6 @@ For the student template:
 
 For the Master spreadsheet
 
-https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDQ2Q3BsQ29BY2RoZ0JMSEdqcmV4RXc#gid=0
+<a href='https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDQ2Q3BsQ29BY2RoZ0JMSEdqcmV4RXc#gid=0' target='_blank'> Master spreadsheet</a>
+
 
