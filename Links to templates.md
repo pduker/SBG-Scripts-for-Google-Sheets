@@ -4,7 +4,7 @@ Note that you'll still have to set the Master Spreadsheet ID on the student temp
 
 For the student template:
 
-https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdFIxd0txU3pMYXIzRGRpX0R6dHlQZVE#gid=0
+<a href='https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdFIxd0txU3pMYXIzRGRpX0R6dHlQZVE#gid=0' target='_blank'> student template</a>
 
 For the Master spreadsheet
 
