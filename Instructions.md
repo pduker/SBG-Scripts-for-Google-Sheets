@@ -22,9 +22,9 @@ you would have:
 var masterid = "0Agwc91nl2SoVdDVHcGFMSndpVVRRMXpBWFNuV1NsRnc"; 
 with your master spreadsheet Id between the quotes above.
 If you do this you'll also want to change the following lines so you don't have a blank row at the top:
-line 51 - change "(1,3,1,numcat...." to (1,2,1,numcat...."
-line 59 - change (r+3,1) to (r+2,1)
-line 64 - change r+3 to r+2 again
+<p>line 51 - change "(1,3,1,numcat...." to (1,2,1,numcat...." </p>
+<p>line 59 - change (r+3,1) to (r+2,1)</p>
+<p>line 64 - change r+3 to r+2 again</p>
 _Update_ - I've now tried this option and it works well.  It seems a little more secure not having the Master ID on the first row of each student's spreadsheet.
 
 
