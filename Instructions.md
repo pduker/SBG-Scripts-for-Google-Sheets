@@ -21,10 +21,10 @@ var masterid = displayPage.getRange(1,1).getValue();
 you would have: 
 var masterid = "0Agwc91nl2SoVdDVHcGFMSndpVVRRMXpBWFNuV1NsRnc"; 
 with your master spreadsheet Id between the quotes above.
-If you do this you'll also want to change the following lines so you don't have a blank row at the top:
-<p>line 51 - change "(1,3,1,numcat...." to (1,2,1,numcat...." </p>
-<p>line 59 - change (r+3,1) to (r+2,1)</p>
-<p>line 64 - change r+3 to r+2 again</p>
+If you do this you'll also want to change a few numbers from 3 to 2 so you don't have a blank row at the top:
+<p>line 51 - change "displayPage.getRange(1,3,1,numcategories)" to ...(1,2,1,numcategories" </p>
+<p>line 59 - change "getRange(r+3,1)" to "getRange(r+2,1)"</p>
+<p>line 64 - change "r+3" to "r+2" </p>
 _Update_ - I've now tried this option and it works well.  It seems a little more secure not having the Master ID on the first row of each student's spreadsheet.
 
 
