@@ -21,7 +21,11 @@ var masterid = displayPage.getRange(1,1).getValue();
 you would have: 
 var masterid = "0Agwc91nl2SoVdDVHcGFMSndpVVRRMXpBWFNuV1NsRnc"; 
 with your master spreadsheet Id between the quotes above.
-_WARNING_ - haven't tried this option yet, and not sure why we didn't do it in the first place, but I think it should work.
+If you do this you'll also want to change the following lines so you don't have a blank row at the top:
+line 51 - change "(1,3,1,numcat...." to (1,2,1,numcat...."
+line 59 - change (r+3,1) to (r+2,1)
+line 64 - change r+3 to r+2 again
+_Update_ - I've now tried this option and it works well.  It seems a little more secure not having the Master ID on the first row of each student's spreadsheet.
 
 
 6) Now that your Student template file is ready, you have to point the Master script to it. Close the script editor and go back to the Student Gradebook Template spreadsheet.  Once there, copy the Student Gradebook Template Id (a similarly long string) as you did in step 3.
