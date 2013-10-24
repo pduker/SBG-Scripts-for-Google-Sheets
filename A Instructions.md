@@ -1,6 +1,43 @@
 <h3> Setting up the Gradebook </h3>
 
 Please follow these instructions to set up a SBG Gradebook in Google Docs:
+Easy Approach (to set this up yourself the longer way, see below).
+
+1. Make sure you are logged into a google account that you want to use for keeping your student data
+2. Go the file titled: "B links to templates.md" on Github, there you will find two links.  Please click on both links (they will take you to pre-made spreadsheet files).
+3. In each of the spreadsheet files, click on File > Make a Copy.  This should create copies of each of these spreadsheets in your Google Drive account.
+4. After you've made copies of the spreadsheets, go ahead and close those windows/tabs.
+5. Then switch over to your Google Drive and open your newly created files (feel free to rename the Master Spreadsheet and Student template according to the class you will teach: Aural skills II Master, Written Theory I Master, etc.).
+6. In the "Master Spreadsheet" copy the sheet Id, (this is a pretty long string ... such as: 0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
+7. Open the "Student Template" spreadsheet.
+8. Go to Tools > Script Editor
+9. In line 29 of the code, paste the Master Spreadsheet Id that you copied in step 6.  Line 29 should then look something like this:
+<p>
+var masterid = "0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE"; 
+</p>
+
+10. Save the file (click on the disk icon, or File > save), and then close the script editor window.
+11. Great, now your template knows where to pull data from when it updates. Now you need to copy the Student Template id (just as you did in step 6: copy that long string between the "spreadsheet/ccc?key=" and the "#gid=0")
+12. Now switch back to the "Master Spreadsheet" window
+13. Go to Tools > Script Editor
+14. On line 22 of the code, paste the Student Template Id so it looks something like this:
+<p>
+  var templateid = "0Agwc91nl2SoVdFIxd0txU3pMyX1zxGRpX0R6dHlQZVE";
+</p>
+15. You will likely also want to change what the title of each student gradebook will be.  the default is "Outcomes Gradebook for [student name]."  To change this, go to line 11 of the code and fill in what you want to appear between the quotes.  E.g. for "Harmony I" you might have:
+<p>
+  var titleStem = "Harmony I Gradebook for ";
+</p>
+16. Now save your script, and close that window.
+17. 
+
+
+
+
+
+
+
+
 
 1a) Create a new spreadsheet called "Master Spreadsheet" (or sth like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.
 
