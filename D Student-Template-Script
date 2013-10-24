@@ -1,3 +1,4 @@
+
 // Pull Data Script
 // This is the script to pull data from the Master spreadsheet (copy into the template so that it runs on 
 // each student's gradebook).
@@ -8,9 +9,9 @@ function PullData() {
   var displayPage = SpreadsheetApp.getActiveSheet();
 
 // finding and pulling the categories (titles) from the master spreadsheet. Here you should set 
-// your Master Grade Book ID which will be a long string such as that below
-  var masterid = "0Agwc91nl2SoVdAhYeDhtNUJ1UkZfDTB5dEVjd1FaUUE";
-  var workbook = SpreadsheetApp.openById(masterid);
+// the Url for your Master Grade Book such as that below (be sure to paste between the quotes):
+
+  var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
   var mastersheet = workbook.getSheetByName("Average");
 
 // getting the total number of categories - This needs to be a formula on the last row of the master
