@@ -1,0 +1,16 @@
+//  Create an trigger that fires when the file opens - you could also set this manually, but it saves a few seconds
+//  for each student to do it this way.
+
+
+function opentrigger () {
+
+// Get spreadsheet key
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var ssId = spreadsheet.getId();
+
+// Create onOpen trigger using the Spreadsheet
+  var onOpenTrigger = ScriptApp.newTrigger("PullData")
+      .forSpreadsheet(spreadsheet)
+      .onOpen()
+      .create();
+}
