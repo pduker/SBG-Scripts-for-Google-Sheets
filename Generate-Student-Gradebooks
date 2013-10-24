@@ -1,25 +1,26 @@
 // Create Student gradebook script
+// Create Student gradebook script
 // This script will take information from your master spreadsheet and crank out a new spreadsheet 
 // for each student.  The master spreadsheet should have a page titled "Average."  The script is set
 // up to pull from this page to get the student name from Column 1, and e-mail address from Column
-//  2.  The student template should have the master spreadsheet Id in A1 (this is a pretty long 
-// string such as: 0Agwc91nl2SoVdGJVTFlCQkhHdkxIWkVnZUkyT08xTkE).  Then you'll likely want 
-// to hide the whole first row.  
+//  2.  The student template should have the master spreadsheet Id in the Pull Data Script (this is a 
+// pretty long string such as: 0Agwc91nl2SoVdGJVTFlCQkhHdkxIWkVnZUkyT08xTkE).  
 
 function createStudentSheets() {
 
 // Setting up the gradebook title and accessing the master spreadsheet
-  var titleStem = "296 Gradebook for ";
+  var titleStem = "Outcomes Gradebook for ";
   var master = SpreadsheetApp.getActiveSheet();
 
-// Get the names and e-mail addresses of the students.  The -2 accounts for the header title and your
-// category counter on the master spreadsheet.
-  var roster = master.getRange(2,1,master.getLastRow()-2,1).getValues();
-  var emailroster = master.getRange(2,2,master.getLastRow()-2,1).getValues();
+// Get the names and e-mail addresses of the students.  The master.getLastRow()-1 accounts for the header title.  If
+// you already have the category counter on the master spreadsheet, then set this to -2.
+  var roster = master.getRange(2,1,master.getLastRow()-1,1).getValues();
+  var emailroster = master.getRange(2,2,master.getLastRow()-1,1).getValues();
 
 // Set the template Id here - this should be the google address for the spreadsheet that you would
-// like to make copies of.
-  var templateid = "0Agwc91nl2SoVdDVHcFFMSndpVVRRMXpBWFNuV1NsRnc";
+// like to make copies of.  Again you'll need to change this address to refer to your student template
+// sheet (which will point back to this document). 
+  var templateid = "0Agwc91nl2SoVdFIxd0txU3pMYX1zRGRpX0R6dHlQZVE";
   var template = SpreadsheetApp.openById(templateid);
 
 // Then start to make clones of the spreadsheet with the student names in the title, and also share
