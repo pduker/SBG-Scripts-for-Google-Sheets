@@ -7,29 +7,29 @@ Please follow these instructions to set up a SBG Gradebook in Google Docs:
 3. In each of the spreadsheet files, click on File > Make a Copy.  This should create copies of each of these spreadsheets in your Google Drive account.
 4. After you've made copies of the spreadsheets, go ahead and close those windows/tabs.
 5. Then switch over to your Google Drive and open your newly created files (feel free to rename the Master Spreadsheet and Student template according to the class you will teach: Aural skills II Master, Written Theory I Master, etc.).
-6. In the "Master Spreadsheet" copy the sheet Id, (this is a pretty long string ... such as: 0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
+6. In the "Master Spreadsheet," highlight and copy the Url 
 7. Open the "Student Template" spreadsheet.
 8. Go to Tools > Script Editor
-9. In line 29 of the code, paste the Master Spreadsheet Id that you copied in step 6.  Line 29 should then look something like this:
+9. In line 29 of the code, paste the Master Spreadsheet Url that you copied in step 6.  Line 29 should then look something like this (be sure to paste between the quotes):
 <p>
-var masterid = "0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE"; 
+var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
 </p>
 
 10. Save the file (click on the disk icon, or File > save), and then close the script editor window.
-11. Great, now your template knows where to pull data from when it updates. Now you need to copy the Student Template id (just as you did in step 6: copy that long string between the "spreadsheet/ccc?key=" and the "#gid=0")
+11. Great, now your template knows where to pull data from when it updates. Now you need to copy the Student Template Url (just as you did in step 6: copy the whole Url field)
 12. Now switch back to the "Master Spreadsheet" window
 13. Go to Tools > Script Editor
-14. On line 22 of the code, paste the Student Template Id so it looks something like this:
+14. On line 23 of the code, paste the Student Template Url so it looks something like this:
 <p>
-  var templateid = "0Agwc91nl2SoVdFIxd0txU3pMyX1zxGRpX0R6dHlQZVE";
+  var template = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDZZeHl1T1NvcFVjVVNqMTRaZXpFY3c&usp=drive_web#gid=0");
 </p>
 15. You will likely also want to change what the title of each student gradebook will be.  the default is "Outcomes Gradebook for [student name]."  To change this, go to line 11 of the code and fill in what you want to appear between the quotes.  E.g. for "Harmony I" you might have:
 <p>
   var titleStem = "Harmony I Gradebook for ";
 </p>
 16. Now save your script, and close that window.
-17. Great - you've done all of the hard part.  Now you want to set up your gradebook.  To do this paste the names and e-mail addresses of each of your students in the appropriate columns of the Master Spreadsheet (i.e. columns A and B).
-18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  Do this by going to Tools > Script Manager, and then clicking on the "Run" button.
+17. Great - you've done all of the hard part involving the script code.  Now you want to set up your gradebook.  To do this paste the names and e-mail addresses of each of your students in the appropriate columns of the Master Spreadsheet (i.e. columns A and B).
+18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Manager, and then clicking on the "Run" button.
 19. You should start seeing student files show up in the main folder of your Google drive.  (and you'll likely want to organize them all into a separate folder for the class.  A quick way to do this is search for the title stem of your student's gradebook (e.g. Harmony I Gradebook was the example above), and then select all, so you can move the files to a separate folder).
 20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.
 21. When the student template script (Pull Data) runs, it needs to know how many categories you are using.  The script is written so that it pulls a number from the last row of your Master Spreadsheet, which needs to be the number of categories you want displayed for the students.  An easy approach to this is to type in the following formula on the last row of the column A in the Master spreadsheet:   <p>
@@ -77,27 +77,27 @@ Here is the more complex approach to creating the SBG gradebook set up without c
 
 1a) Create a new spreadsheet called "Master Spreadsheet" (or something like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.
 
-2) Copy the Master Spreadsheet Id (this is a pretty long string ... 
-such as: 0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE). It can be found in the URL in between 
-the "spreadsheet/ccc?key=" and the "#gid=0" right at the end.
+2) Copy the Master Spreadsheet Url
 
 3) Create a new spreadsheet (call it "Student Gradebook Template" or something like that) 
 
 4) In the "Student Gradebook Template" spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  At this point you'll want to change line 12 of the code by pasting in your Master Spreadsheet Id.  Line 12 should then look something like this:
 <p>
-var masterid = "0Agwc91nl2SoVdGJVTFlCOkhHdkxIWkVnZUkyT08xTkE"; 
+  var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
 </p>
 
 5) Great - you can save and close the script editor.  At this point you may want to consider adding some highlighting or column/row shading to help your students with legibility, but your Student template file is ready.
 
 6) Go back to the "Master Spreadsheet," go to Tools > Script editor.  Paste in the Generate Student Gradebook script (from this Github repository - it's listed as C).  
  
-7) Now go back to to the Student Template spreadsheet and copy the Student Template Id (a similarly long string) as you did in step 2.
+7) Now go back to to the Student Template spreadsheet and copy the Student Template Url as you did in step 2.
 
-8)Now go to your Master Spreadsheet script editor, and past in the Student Gradebook Template ID in line 22.  It should read something like this (except with your Template ID):<p>
-  var templateid = "0Agwc91nl2SoVdDWHcFFMSndpVVRRMXpBWFNuV1NsRnc"; </p>
+8)Now go to your Master Spreadsheet script editor, and past in the Student Gradebook Template Url in line 23.  It should read something like this (except with your Template url):<p>
+ var template = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDZZeHl1T1NvcFVjVVNqMTRaZXpFY3c&usp=drive_web#gid=0");
 
-9) Great - your Master script is set and your template is set with a script in it ready to run.  So go ahead and run your Generate-Student-Gradebooks script (Tools > Script manager... then click on the Run tab).
+  </p>
+
+9) Great - your Master script is set and your template is set with a script in it ready to run.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). So go ahead and run your Generate-Student-Gradebooks script (Tools > Script manager... then click on the Run tab).  
 
 10) You should start seeing student files show up in the main folder of your Google drive. 
 
