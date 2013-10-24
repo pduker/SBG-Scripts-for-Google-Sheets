@@ -1,5 +1,4 @@
-// Create Student gradebook script
-// Create Student gradebook script
+// Create Student Sheets script
 // This script will take information from your master spreadsheet and crank out a new spreadsheet 
 // for each student.  The master spreadsheet should have a page titled "Average."  The script is set
 // up to pull from this page to get the student name from Column 1, and e-mail address from Column
@@ -17,20 +16,19 @@ function createStudentSheets() {
   var roster = master.getRange(2,1,master.getLastRow()-1,1).getValues();
   var emailroster = master.getRange(2,2,master.getLastRow()-1,1).getValues();
 
-// Set the template Id here - this should be the google address for the spreadsheet that you would
+// Set the template Url here - this should be the google address for the spreadsheet that you would
 // like to make copies of.  Again you'll need to change this address to refer to your student template
 // sheet (which will point back to this document). 
-  var templateid = "0Agwc91nl2SoVdFIxd0txU3pMYX1zRGRpX0R6dHlQZVE";
-  var template = SpreadsheetApp.openById(templateid);
+  
+  var template = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDZZeHl1T1NvcFVjVVNqMTRaZXpFY3c&usp=drive_web#gid=0");
 
 // Then start to make clones of the spreadsheet with the student names in the title, and also share
 // with the students.
   for(var s = 0; s<roster.length;s++){
     var stuid = roster[s][0];
     var emailid = emailroster[s][0];
-    // Logger.log(s + " " + stuname + roster.length + roster[0].length);
+    // Logger.log(s + " " + stuname + roster.length + roster[0].length); for debugging
    var newsheet = template.copy(titleStem + stuid);
-    newsheet.getRange("B1").setValue(emailid);
     newsheet.addViewer(emailid);
   }
 }
