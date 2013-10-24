@@ -1,21 +1,22 @@
-//   Pull Data Script
-// This is the script to pull data from the Master spreadsheet (copy into the template so that it runs on 
-// each student's gradebook).  
 
+// Pull Data Script
+// This is the script to pull data from the Master spreadsheet (copy into the template so that it runs on 
+// each student's gradebook).
 function PullData() {
   
 // getting student name and setting up the sheet for writing
   var stuid = SpreadsheetApp.getActiveSpreadsheet().getName().split("for ")[1];
   var displayPage = SpreadsheetApp.getActiveSheet();
 
-// finding and pulling the categories (titles) from the master spreadsheet
-  var masterid = displayPage.getRange(1,1).getValue();
+// finding and pulling the categories (titles) from the master spreadsheet. Here you should set 
+// your Master Grade Book ID which will be a long string such as that below
+  var masterid = "0Agwc91nl2SoVdAhYeDhtNUJ1UkZfDTB5dEVjd1FaUUE";
   var workbook = SpreadsheetApp.openById(masterid);
   var mastersheet = workbook.getSheetByName("Average");
 
-// getting the total number of categories - this needs to be a formula on the last row of the master
-// spreadsheet that counts the categories (or you could simply put the number here if it has already
-// been determined).
+// getting the total number of categories - This needs to be a formula on the last row of the master
+// spreadsheet that counts the categories; something like "=(Counta(1:1)) - 2" (or you could simply 
+// put the number here if it has already been determined).
   var numcategories = mastersheet.getRange(mastersheet.getLastRow(),1).getValue();
   
 //Finding which row of the master spreadsheet corresponds to the correct stuid 
@@ -48,20 +49,20 @@ function PullData() {
 // "Average" sheet in the master spreadsheet 
 
   var categories = mastersheet.getRange(1,3,1,numcategories).getValues();  
-  displayPage.getRange(2,2,1,numcategories).setValues(categories);
+  displayPage.getRange(1,2,1,numcategories).setValues(categories);
   
 // this is where it goes through each page of the master spreadsheet and starts to pull data for the 
-// student gradebook. It first pulls the assignment name and pastes into column 1 of the student
+// student gradebook. It first pulls the assignment name and pastes into the first column (A) of the student
 // gradebook.  Then it pulls the student scores and pastes them into the student gradebook as well.  
 
   for(var r=0;r<assignments.length;r++){
     var assignmentname = assignments[r].getName();  
-    displayPage.getRange(r+3,1).setValue(assignmentname);
+    displayPage.getRange(r+2,1).setValue(assignmentname);
     var assignmentsheet = assignments[r]; 
     var assignmentdata = assignmentsheet.getRange(studentrow,3,1,numcategories).getValues();
     for(var dp=0;dp<assignmentdata[0].length;dp++){
       var targetcol = dp+2;
-      var targetrow = r+3;
+      var targetrow = r+2;
       displayPage.getRange(targetrow,targetcol).setValue(assignmentdata[0][dp])
     }
   }
@@ -69,3 +70,5 @@ function PullData() {
 // Voila - thanks so much to Becky Kinney for help with all of the coding.
 
 }
+
+
