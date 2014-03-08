@@ -32,7 +32,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
 18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Manager, and then clicking on the "Run" button.  Note that the first time you click "Run" you will have to click "OK" on two permissions dialog boxes. After you've given permission to the script to run, you then have to click on "Run" again.
 
 19. You should start seeing student files show up in the main folder of your Google drive.  (and you'll likely want to organize them all into a separate folder for the class.  A quick way to do this is search for the title stem of your student's gradebook (e.g. Harmony I Gradebook was the example above), and then select all, so you can move the files to a separate folder).
-20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.
+20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.  I recommend you finish all of the above steps before moving on to the next step, if the Create Student Scripts script has not finished running before you move on to enter in the category count formula you'll get an extra gradesheet for "3." (Not a big deal as you can delete it).
 21. When the student template script (Pull Data) runs, it needs to know how many categories you are using.  The script is written so that it pulls a number from the last row of your Master Spreadsheet, which needs to be the number of categories you want displayed for the students.  An easy approach to this is to type in the following formula on the last row of the column A in the Master spreadsheet:   <p>
 =(Counta(1:1)) - 2 </p>  (Basically this counts how many columns have data and subtracts two for the name and e-mail address columns) 
 22. Here comes the tedious part. Unfortunately you can't automatically create triggers for scripts that access other files of yours (this is an understandable security feature that Google has in place).  In the student Template file, there is a trigger setting script that you will need run for each student file.  So you have to do the following for each of your student files:
@@ -45,6 +45,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
  <br>f) You will also have to "Approve" that the script will access some of your other spreadsheets</br>
  <br>g) You will then need to click "Run" again for the script to actually run.</br>
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
+24. I recommend you finish all of the above steps before moving on to the next section, in particular you'll want to be sure that the Create Student Scripts script has finished running before you move on to enter in the 
 
 
 
