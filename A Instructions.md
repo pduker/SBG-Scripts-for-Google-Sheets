@@ -29,7 +29,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
 </p>
 16. Now save your script, and close that window.
 17. Great - you've done all of the hard part involving the script code.  Now you want to set up your gradebook.  To do this paste the names and e-mail addresses of each of your students in the appropriate columns of the Master Spreadsheet (i.e. columns A and B).
-18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Manager, and then clicking on the "Run" button.  Note that the first time you click "Run" you will have to click "OK" on two permissions dialog boxes. After you've given permission to the script to run, you then have to click on "Run" again.
+18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Manager, and then clicking on the "Run" button.  Note that when you click "Run" you will have to click "OK" and "Accept" on two permissions dialog boxes. After you've given permission to the script to run, you then have to click on "Run" a second time for the script to actually follow through.
 
 19. You should start seeing student files show up in the main folder of your Google drive.  (and you'll likely want to organize them all into a separate folder for the class.  A quick way to do this is search for the title stem of your student's gradebook (e.g. Harmony I Gradebook was the example above), and then select all, so you can move the files to a separate folder).
 20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.  I recommend you finish all of the above steps before moving on to the next step, if the Create Student Scripts script has not finished running before you move on to enter in the category count formula you'll get an extra gradesheet for "3." (Not a big deal as you can delete it).  Basically, this is a good point to take a break while the script finishes running <br>
@@ -47,7 +47,6 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
  <br>f) You will also have to "Approve" that the script will access some of your other spreadsheets</br>
  <br>g) You will then need to click "Run" again for the script to actually run.</br>
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
-24. I recommend you finish all of the above steps before moving on to the next section, in particular you'll want to be sure that the Create Student Scripts script has finished running before you move on to enter in the 
 
 
 
