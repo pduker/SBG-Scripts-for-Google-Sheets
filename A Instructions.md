@@ -42,7 +42,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
  <br>c) It should automatically default to highlight the "opentrigger" script, if not click on that script</br>
  <br>d) Click on the "Run" button
  <br>e) You will need to click OK to give the script authorization to run</br>
- <br>f) You will also have to approve that the script will access some of your other spreadsheets</br>
+ <br>f) You will also have to "Approve" that the script will access some of your other spreadsheets</br>
  <br>g) You will then need to click "Run" again for the script to actually run.</br>
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
 
