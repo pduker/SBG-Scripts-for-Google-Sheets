@@ -79,7 +79,7 @@ To see an example of the Master spreadsheet (with all of the averages and grade 
 
 Here is the more complex approach to creating the SBG gradebook set up without copying the templates.
 
-1a) Create a new spreadsheet called "Master Spreadsheet" (or something like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.
+1a) Create a new spreadsheet called "Master Spreadsheet" (or something like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.  That said, if you'd prefer to call this first tab something else, you can change the name to whatever you'd like by changing line 30 of the "Pull data" code in the student template files.
 
 2) Copy the Master Spreadsheet Url
 
