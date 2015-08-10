@@ -2,7 +2,7 @@
 //  for each student to do it this way.
 
 
-function opentrigger () {
+function settriggers () {
 
 // Get spreadsheet key
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -12,5 +12,11 @@ function opentrigger () {
   var onOpenTrigger = ScriptApp.newTrigger("PullData")
       .forSpreadsheet(spreadsheet)
       .onOpen()
+      .create();
+      
+// Create timeBased trigger
+  ScriptApp.newTrigger("PullData")
+      .timeBased()
+      .everyHours(24)
       .create();
 }
