@@ -10,7 +10,7 @@ Please follow these instructions to set up a SBG Gradebook in Google Docs:
 6. In the "Master Spreadsheet," highlight and copy the Url 
 7. Open the "Student Template" spreadsheet.
 8. Go to Tools > Script Editor
-9. In line 35 of the code, paste the Master Spreadsheet Url that you copied in step 6 between the quotes.  Line 29 should then look something like this (be sure to have the quotes around your url):
+9. In line 35 of the code, paste the Master Spreadsheet Url that you copied in step 6 between the quotes.  Line 35 should then look something like this (be sure to have the quotes around your url):
 <p>
 var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
 </p>
