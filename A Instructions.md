@@ -10,13 +10,13 @@ Please follow these instructions to set up a SBG Gradebook in Google Docs:
 6. In the "Master Spreadsheet," highlight and copy the Url 
 7. Open the "Student Template" spreadsheet.
 8. Go to Tools > Script Editor
-9. In line 29 of the code, paste the Master Spreadsheet Url that you copied in step 6.  Line 29 should then look something like this (be sure to paste between the quotes):
+9. In line 35 of the code, paste the Master Spreadsheet Url that you copied in step 6 between the quotes.  Line 29 should then look something like this (be sure to have the quotes around your url):
 <p>
 var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
 </p>
 
 10. Save the file (click on the disk icon, or File > save), and then close the script editor window.
-11. Great, now your template knows where to pull data from when it updates. Now you need to copy the Student Template Url (just as you did in step 6: copy the whole Url field)
+11. Great, now your template knows where to pull data from when it updates. Now you need to copy the Student Template Url (just as you did in step 6:) copy the whole Url field for the student template file
 12. Now switch back to the "Master Spreadsheet" window
 13. Go to Tools > Script Editor
 14. On line 23 of the code, paste the Student Template Url so it looks something like this:
@@ -29,23 +29,23 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
 </p>
 16. Now save your script, and close that window.
 17. Great - you've done all of the hard part involving the script code.  Now you want to set up your gradebook.  To do this paste the names and e-mail addresses of each of your students in the appropriate columns of the Master Spreadsheet (i.e. columns A and B).
-18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Manager, and then clicking on the "Run" button.  Note that when you click "Run" you will have to click "OK" and "Accept" on two permissions dialog boxes. After you've given permission to the script to run, you then have to click on "Run" a second time for the script to actually follow through.
+18. After you've put in all of the names, you are ready to run the Create Student Sheets Script.  I recommend that you run this script in the evening when Google's servers aren't so busy (I've had this take a while in the middle of the day). Do this by going to Tools > Script Editor, and then clicking on the "play" arrow.  Note that when you run the script you will have to click "OK" and "Accept" on two permissions dialog boxes. After you've given permission to the script to run, they should run (in the past you had to click on "Run" a second time for the script to actually follow through, but it looks like Google has fixed this).
 
-19. You should start seeing student files show up in the main folder of your Google drive.  (and you'll likely want to organize them all into a separate folder for the class.  A quick way to do this is search for the title stem of your student's gradebook (e.g. Harmony I Gradebook was the example above), and then select all, so you can move the files to a separate folder).
-20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.  I recommend you finish all of the above steps before moving on to the next step, if the Create Student Scripts script has not finished running before you move on to enter in the category count formula you'll get an extra gradesheet for "3." (Not a big deal as you can delete it).  Basically, this is a good point to take a break while the script finishes running <br>
+19. You should start seeing student files show up in the main folder of your Google drive (and you'll likely want to organize them all into a separate folder for the class.  A quick way to do this is search for the title stem of your student's gradebook (e.g. "Harmony I Gradebook" was the example above), and then select all, so you can move the files to a separate folder).
+20. Depending on the time of day you run your script this process may be fast or slow - I've found it is much faster in the evening when Google's servers aren't getting as much traffic.  I recommend you finish all of the above steps before moving on to the next step, if the Create Student Scripts script has not finished running before you move on to enter in the category count formula you'll get an extra gradesheet. (Not a big deal as you can delete it).  Basically, this is a good point to take a break while the script finishes running <br>
 <br>
 <br>
-21. When the student template script (Pull Data) runs, it needs to know how many categories you are using.  The script is written so that it pulls a number from the last row of your Master Spreadsheet, which needs to be the number of categories you want displayed for the students.  An easy approach to this is to type in the following formula on the last row of the column A in the Master spreadsheet:   <p>
+21. When the student template script (Pull Data) runs, it needs to know how many categories you are using. The script is written so that it pulls a number from the last row of a page called "Averages" of your Master Spreadsheet, which needs to be the number of categories you want displayed for the students.  An easy approach to this is to type in the following formula on the last row of the column A in the Master spreadsheet:   <p>
 =(Counta(1:1)) - 2 </p>  (Basically this counts how many columns have data and subtracts two for the name and e-mail address columns) 
 22. Here comes the tedious part. Unfortunately you can't automatically create triggers for scripts that access other files of yours (this is an understandable security feature that Google has in place).  In the student Template file, there is a trigger setting script that you will need run for each student file.  So you have to do the following for each of your student files:
  <br> </br>
- <br>a) open the file </br>
- <br>b) Tools > Script Manager </br>
- <br>c) It should automatically default to highlight the "opentrigger" script, if not click on that script</br>
- <br>d) Click on the "Run" button
- <br>e) You will need to click OK to give the script authorization to run</br>
- <br>f) You will also have to "Approve" that the script will access some of your other spreadsheets</br>
- <br>g) You will then need to click "Run" again for the script to actually run.</br>
+ <br>a) open the student file </br>
+ <br>b) Tools > Script Editor </br>
+ <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.</br>
+ <br>d) Click on the "play" button to run the script
+ <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run</br>
+ <br>f) You can double check that the triggers are set by clicking on the little "Clock" looking icon at the top.
+
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
 
 
@@ -59,7 +59,7 @@ In the Master gradebook, each column is for a separate category/standard and eac
 
 2) Paste the top row of the "Average" tab onto the newly created new assignment tab (to make sure that all of your categories are up to date).
 
-3) Enter in the grades in the new assignment tab (I like to hide the columns that are not relevant to this assignment, so it's easier to see what the actual scores are, but this isn't necessary).  
+3) Enter in the grades in the new assignment tab (I like to hide the columns that are not relevant to this assignment, so it's easier to see what the actual scores are).  
 
 4) Go to the Master spreadsheet and set up an function that looks at the same cell on each tab and averages them together.  Something like: <p>
 =Average(Quiz02!D2,Quiz03!D2,Quiz04!D2,Quiz05!D2,Quiz06!D2,Quiz07!D2,Quiz08!D2) </p>
@@ -79,13 +79,13 @@ To see an example of the Master spreadsheet (with all of the averages and grade 
 
 Here is the more complex approach to creating the SBG gradebook set up without copying the templates.
 
-1a) Create a new spreadsheet called "Master Spreadsheet" (or something like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.  That said, if you'd prefer to call this first tab something else, you can change the name to whatever you'd like by changing line 30 of the "Pull data" code in the student template files.
+1a) Create a new spreadsheet called "Master Spreadsheet" (or something like that) for the class you are hoping to use SBG: column A will be the list of student names, column B will be the list of e-mail addresses (corresponding to the row so line 1 will give a student name in A and his or her e-mail in B).  At the bottom of the spreadsheet, click on the triangle next to the tab title (it says "Sheet1" by default) and rename it "Average."  **Important** If the name of the first tab is not "Average" the student scripts will not run properly.  That said, if you'd prefer to call this first tab something else, you can change the name to whatever you'd like by changing line 36 of the "Pull data" code in the student template files.
 
 2) Copy the Master Spreadsheet Url
 
 3) Create a new spreadsheet (call it "Student Gradebook Template" or something like that) 
 
-4) In the "Student Gradebook Template" spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  At this point you'll want to change line 12 of the code by pasting in your Master Spreadsheet Id.  Line 12 should then look something like this:
+4) In the "Student Gradebook Template" spreadsheet, go to Tools > Script editor and then paste in the "Student-Template-Script" code from this Repository.  At this point you'll want to change line 35 of the code by pasting in your Master Spreadsheet Id.  Line 35 should then look something like this:
 <p>
   var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0");
 </p>
@@ -107,11 +107,12 @@ Here is the more complex approach to creating the SBG gradebook set up without c
 
 11) Here comes the tedious part. Unfortunately triggers don't copy when a file is duplicated, so you have to do the following for each of your student files:
  <br> </br>
- <br>a) open the file </br>
+ <br>a) open the student file </br>
  <br>b) Tools > Script Editor </br>
- <br>c) Click on the "triggers" icon (looks like a clock)</br>
- <br>d) Click on the blue text that says: "No triggers set up. Click here to add one now"</br>
- <br>e) The default option is on opening the file, which is what you want, so just click Save.</br>
+ <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.</br>
+ <br>d) Click on the "play" button to run the script
+ <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run</br>
+ <br>f) You can double check that the triggers are set by clicking on the little "Clock" looking icon at the top.
  
 As you get going, this doesn't take as much time as you think (depending on your class size), but I'd love it if someone found a way to automate this part.
 
