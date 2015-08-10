@@ -39,11 +39,11 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
 =(Counta(1:1)) - 2 </p>  (Basically this counts how many columns have data and subtracts two for the name and e-mail address columns) 
 22. Here comes the tedious part. Unfortunately you can't automatically create triggers for scripts that access other files of yours (this is an understandable security feature that Google has in place).  In the student Template file, there is a trigger setting script that you will need run for each student file.  So you have to do the following for each of your student files:
  <br> </br>
- <br>a) open the student file </br>
- <br>b) Tools > Script Editor </br>
- <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.</br>
+ <br>a) open the student file
+ <br>b) Tools > Script Editor 
+ <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.
  <br>d) Click on the "play" button to run the script
- <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run</br>
+ <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run
  <br>f) You can double check that the triggers are set by clicking on the little "Clock" looking icon at the top.
 
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
@@ -107,11 +107,11 @@ Here is the more complex approach to creating the SBG gradebook set up without c
 
 11) Here comes the tedious part. Unfortunately triggers don't copy when a file is duplicated, so you have to do the following for each of your student files:
  <br> </br>
- <br>a) open the student file </br>
- <br>b) Tools > Script Editor </br>
- <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.</br>
+ <br>a) open the student file
+ <br>b) Tools > Script Editor 
+ <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.
  <br>d) Click on the "play" button to run the script
- <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run</br>
+ <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run
  <br>f) You can double check that the triggers are set by clicking on the little "Clock" looking icon at the top.
  
 As you get going, this doesn't take as much time as you think (depending on your class size), but I'd love it if someone found a way to automate this part.
