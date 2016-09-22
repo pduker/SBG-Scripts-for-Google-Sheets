@@ -43,7 +43,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
  <br>b) Tools > Script Editor 
  <br>c) Next to the play button, and the "bug" button, there is a small drop down menu that says "Select function"; click on that and then click on the "SetTriggers" script.
  <br>d) Click on the "play" button to run the script
- <br>e) As before you will need to click "continue," and then "Accept" to give the script authorization to run
+ <br>e) You will need to click "Review Permissions," and then "Allow" to give the script authorization to run
  <br>f) You can double check that the triggers are set by clicking on the little "Clock" looking icon at the top.
 
 23. TADA and Congratulations! After this you should be all set in terms of the student files updating automatically. Now all you have to do is make sure that you keep the Master Spreadsheet in order, and things will be fine.
