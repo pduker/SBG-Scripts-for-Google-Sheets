@@ -36,7 +36,7 @@ var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/a/udel.edu/spre
 <br>
 <br>
 21. When the student template script (Pull Data) runs, it needs to know how many categories you are using. The script is written so that it pulls a number from the last row of a page called "Averages" of your Master Spreadsheet, which needs to be the number of categories you want displayed for the students.  An easy approach to this is to type in the following formula on the last row of the column A in the Master spreadsheet:   <p>
-=(Counta(1:1)) - 2 </p>  (Basically this counts how many columns have data and subtracts two for the name and e-mail address columns)  
+=(Counta(1:1)) - 2 </p>  (Basically this counts how many columns have data and subtracts two for the name and e-mail address columns)<br>  
 22. Here comes the tedious part. Unfortunately you can't automatically create triggers for scripts that access other files of yours (this is an understandable security feature that Google has in place).  In the student Template file, there is a trigger setting script that you will need run for each student file.  So you have to do the following for each of your student files:
  <br> </br>
  <br>a) open the student file
