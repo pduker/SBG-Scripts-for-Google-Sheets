@@ -4,10 +4,10 @@ Note that you'll still have to tweak both scripts as described in the instructio
 
 For the student template:
 
-<a href='https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdDZZeHl1T1NvcFVjVVNqMTRaZXpFY3c&usp=drive_web#gid=0' target='_blank'> student template</a>
+<a href='https://docs.google.com/spreadsheets/d/1wVxzXOm0vR2EiNh1JOTLn5F0gDvwIWuDwv942ONN604/copy'> student template</a>
 
 For the Master spreadsheet
 
-<a href='https://docs.google.com/a/udel.edu/spreadsheet/ccc?key=0Agwc91nl2SoVdGl1VmVGazNUM0NpOVZMbG1KVHdUMnc&usp=drive_web#gid=0' target='_blank'> Master spreadsheet</a>
+<a href='https://docs.google.com/spreadsheets/d/1wVxzXOm0vR2EiNh1JOTLn5F0gDvwIWuDwv942ONN604/copy'> Master spreadsheet</a>
 
 
