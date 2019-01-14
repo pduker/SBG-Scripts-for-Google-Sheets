@@ -8,6 +8,6 @@ For the student template:
 
 For the Master spreadsheet
 
-<a href='https://docs.google.com/spreadsheets/d/1wVxzXOm0vR2EiNh1JOTLn5F0gDvwIWuDwv942ONN604/copy'> Master spreadsheet</a>
+<a href='https://docs.google.com/spreadsheets/d/1H-xbowMUbKDf48T-ZN-WQ7g7NagvaPVo4IqDkBYnHC8/copy'> Master spreadsheet</a>
 
 
