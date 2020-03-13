@@ -1,6 +1,6 @@
-SBG-Scripts-for-GDocs
+SBG-Scripts-for-GoogleSheets
 =====================
 
-Scripts to help with the set up of Standards Based Grading in Google Docs
+Scripts to help with the set up of Standards Based Grading in Google Sheets
 
-The Instructions file gives a detailed blow by blow on how to set this up.
+The Instructions file gives detailed instructions on how to set this up.
