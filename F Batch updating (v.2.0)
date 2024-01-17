@@ -1,0 +1,115 @@
+Here's a pretty significant update to this process.  Google Scripts allows for the processing of multiple files within a folder, so you can run the following 
+in Google app script on the folder containing student sheets instead of manually authenticating each one at the beginning of the term. 
+You can also run this to update grades anytime you need to. If I get time I'll re-write the intro and update everything, but here's the script that you can run to authenticate (or pull grades) on all of the sheets at once. 
+
+// To run the openAndCallPullDataInFolder you will need to update the following lines:
+// line 22 to link to your master spreadsheet.  
+// line 80 to link to the folder ID of where the student spreadsheets are located
+// Happy pushing!
+//
+
+// Pull Data Script
+// This is the script to pull data from the Master spreadsheet (copy into the template so that it runs on 
+// each student's gradebook).
+function PullData() {
+  
+// getting student name and setting up the sheet for writing
+  var stuid = SpreadsheetApp.getActiveSpreadsheet().getName().split("for ")[1];
+  var displayPage = SpreadsheetApp.getActiveSheet();
+
+// finding and pulling the categories (titles) from the master spreadsheet. Here you should set 
+// your Master Grade Book Url such as that below (be sure to paste between the quotes)
+  var workbook = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1Ala5luuHc****Xmnk/edit#gid=0");
+  var mastersheet = workbook.getSheetByName("Average");
+
+// getting the total number of categories - This needs to be a formula on the last row of the master
+// spreadsheet that counts the categories; something like "=(Counta(1:1)) - 2" (or you could simply 
+// put the number here if it has already been determined).
+  var numcategories = mastersheet.getRange(mastersheet.getLastRow(),1).getValue();
+  
+//Finding which row of the master spreadsheet corresponds to the correct stuid 
+  for(var mr=2;mr<=mastersheet.getLastRow();mr++){
+    if(mastersheet.getRange(mr,1).getValue()==stuid){
+      var studentrow = mr;
+      break;
+    }else{
+//Logger.log(mastersheet.getRange(mr,1).getValue() + "," + stuid);    // (for debugging)
+    }
+  }
+
+// getting all of the data from the Master to pull from.  This takes a bit of processing power - perhaps
+// there's a simpler solution?
+
+  var assignments = workbook.getSheets();
+  
+// clearing away any previous data so that it is a clean re-write in case you've deleted or changed
+// any of your categories.  Note if you see yourself deleting more than 5 categories you'll want to 
+// update the number below to be more than 5 (e.g. if you might delete 7 categories you'll want the 
+// next line to read:
+//  displayPage.getRange(2,2,numcategories,assignments.length + 7).clear({contentsOnly:true});
+// The only con with this is that it creates extra blank columns on the student gradebook, which
+// isn't too big of a deal
+
+//  displayPage.getRange(2,2,numcategories,assignments.length + 5).clear({contentsOnly:true});
+
+// re-pull the categories from the master (this and the last function allows for a set of categories that
+// can grow and shrink over time).  This pastes the categories so that it matches those on the
+// "Average" sheet in the master spreadsheet 
+
+  var categories = mastersheet.getRange(1,3,1,(numcategories+6)).getValues();  
+  displayPage.getRange(1,2,1,(numcategories+6)).setValues(categories);
+  
+// this is where it goes through each page of the master spreadsheet and starts to pull data for the 
+// student gradebook. It first pulls the assignment name and pastes into the first column (A) of the student
+// gradebook.  Then it pulls the student scores and pastes them into the student gradebook as well.  
+
+  for(var r=0;r<assignments.length;r++){
+    var assignmentname = assignments[r].getName();  
+    displayPage.getRange(r+2,1).setValue(assignmentname);
+    var assignmentsheet = assignments[r]; 
+    var assignmentdata = assignmentsheet.getRange(studentrow,3,1,numcategories).getValues();
+    for(var dp=0;dp<assignmentdata[0].length;dp++){
+      var targetcol = dp+2;
+      var targetrow = r+2;
+      displayPage.getRange(targetrow,targetcol).setValue(assignmentdata[0][dp])
+    }
+  }
+}
+
+function pullDataForFolder() {
+  // Replace 'Your Folder ID' with the ID of your folder
+  var folderId = '1RoH***JvFri';
+  
+  // Get the folder by ID
+  var folder = DriveApp.getFolderById(folderId);
+  
+  // Get all files in the folder
+  var files = folder.getFiles();
+  
+  // Iterate through each file
+  while (files.hasNext()) {
+    var file = files.next();
+    
+    // Open each sheet
+    var spreadsheet = SpreadsheetApp.openById(file.getId());
+    
+    // Check if the opened file is a spreadsheet
+    if (spreadsheet && spreadsheet.getActiveSheet) {
+      
+      // Set the active spreadsheet explicitly
+      SpreadsheetApp.setActiveSpreadsheet(spreadsheet);
+      
+      // Call the PullData function
+      try {
+        PullData();
+        console.log('PullData called successfully.');
+      } catch (error) {
+        console.error('Error calling PullData: ' + error.message);
+      }
+ 
+    } else {
+      // Log a message or take action if the file is not a spreadsheet
+      Logger.log('Skipped non-spreadsheet file: ' + file.getName());
+    }
+  }
+}
