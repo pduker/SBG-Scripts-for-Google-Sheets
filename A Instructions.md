@@ -4,9 +4,9 @@ Please follow these instructions to set up a SBG Gradebook in Google Docs:
 
 1. Make sure you are logged into a google account that you want to use for keeping your student data
 2. Go the file titled: "B links to templates.md" on Github, there you will find two links.  Please click on both links (they will take you to pre-made spreadsheet files).
-3. In each of the spreadsheet files, click on File > Make a Copy.  This should create copies of each of these spreadsheets in your Google Drive account.
-4. After you've made copies of the spreadsheets, go ahead and close those windows/tabs.
-5. Then switch over to your Google Drive and open your newly created files (feel free to rename the Master Spreadsheet and Student template according to the class you will teach: Aural skills II Master, Written Theory I Master, etc.).
+3. If it doesn't copy automatically, in each of the spreadsheet files, click on File > Make a Copy.  This should create copies of each of these spreadsheets in your Google Drive account.
+4. (if you had to make copies of the spreadsheets, go ahead and close those original windows/tabs).
+5. Then switch over to your Google Drive and open your newly created files (feel free to rename the Master Spreadsheet and Student template according to the class you will teach: Class_Name_Master, "Written Theory I Master", etc.).
 6. In the "Master Spreadsheet," highlight and copy the Url 
 7. Open the "Student Template" spreadsheet.
 8. Go to Tools > Script Editor
